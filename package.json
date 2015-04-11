@@ -1,0 +1,12 @@
+{
+  "name": "python-yapf",
+  "main": "./lib/index",
+  "version": "0.0.1",
+  "description": "Format Python files using Google's YAPF",
+  "repository": "https://github.com/blacktop/atom-python-yapf",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {}
+}
