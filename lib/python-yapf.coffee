@@ -1,4 +1,5 @@
 fs = require 'fs'
+# $ = require 'jquery'
 $ = require('atom').$
 process = require 'child_process'
 
@@ -6,7 +7,7 @@ module.exports =
 class PythonYAPF
 
   checkForPythonContext: ->
-    editor = atom.workspace.getActiveEditor()
+    editor = atom.workspace.getActiveTextEditor()
     if not editor?
       return false
     return editor.getGrammar().name == 'Python'
@@ -37,7 +38,7 @@ class PythonYAPF
     statusBarElement.text(message)
 
   getFilePath: ->
-    editor = atom.workspace.getActiveEditor()
+    editor = atom.workspace.getActiveTextEditor()
     return editor.getPath()
 
   checkFormat: ->
@@ -55,8 +56,14 @@ class PythonYAPF
     proc = process.spawn yapfPath, params
 
     updateStatusbarText = @updateStatusbarText
+    yapf_out = []
+    proc.stdout.setEncoding('utf8')
+    proc.stdout.on 'data', (chunk) ->
+      yapf_out.push(chunk)
+    proc.stdout.on 'end', (chunk) ->
+      yapf_out.join()
     proc.on 'exit', (exit_code, signal) ->
-      if exit_code == 0
+      if yapf_out.length == 0
         updateStatusbarText("√", false)
       else
         updateStatusbarText("x", true)
@@ -67,7 +74,6 @@ class PythonYAPF
 
     params = [@getFilePath(), "-i"]
     yapfPath = atom.config.get "python-yapf.yapfPath"
-
     which = process.spawnSync('which', ['yapf']).status
     if which == 1 and not fs.existsSync(yapfPath)
       @updateStatusbarText("unable to open " + yapfPath, false)
