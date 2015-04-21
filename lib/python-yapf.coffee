@@ -1,6 +1,5 @@
 fs = require 'fs'
-# $ = require 'jquery'
-$ = require('atom').$
+$ = require 'jquery'
 process = require 'child_process'
 
 module.exports =
