@@ -1,7 +1,7 @@
 {
   "name": "python-yapf",
   "main": "./lib/index",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Format Python files using Google's YAPF",
   "repository": "https://github.com/blacktop/atom-python-yapf",
   "license": "MIT",
