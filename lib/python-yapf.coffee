@@ -45,7 +45,7 @@ class PythonYAPF
       return
 
     params = [@getFilePath(), "-d"]
-    yapfPath = atom.config.get "python-yapf.yapfPath"
+    yapfPath = atom.config.get('python-yapf.yapfPath')
 
     which = process.spawnSync('which', ['yapf']).status
     if which == 1 and not fs.existsSync(yapfPath)
@@ -72,7 +72,7 @@ class PythonYAPF
       return
 
     params = [@getFilePath(), "-i"]
-    yapfPath = atom.config.get "python-yapf.yapfPath"
+    yapfPath = atom.config.get('python-yapf.yapfPath')
     which = process.spawnSync('which', ['yapf']).status
     if which == 1 and not fs.existsSync(yapfPath)
       @updateStatusbarText("unable to open " + yapfPath, false)

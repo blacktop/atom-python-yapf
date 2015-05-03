@@ -1,10 +1,16 @@
 PythonYAPF = require './python-yapf'
 
 module.exports =
-  configDefaults:
-    yapfPath: "yapf"
-    formatOnSave: false
-    checkOnSave: true
+  config:
+    yapfPath:
+      type: 'string'
+      default: 'yapf'
+    formatOnSave:
+      type: 'boolean'
+      default: false
+    checkOnSave:
+      type: 'boolean'
+      default: true
 
   activate: ->
     pi = new PythonYAPF()
