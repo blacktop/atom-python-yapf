@@ -71,8 +71,12 @@ class PythonYAPF
     if not @checkForPythonContext()
       return
 
-    params = [@getFilePath(), "-i"]
+    yapfStyle = atom.config.get('python-yapf.yapfStyle')
     yapfPath = atom.config.get('python-yapf.yapfPath')
+    params = [@getFilePath(), "-i"]
+    if yapfStyle.length
+      params = params.concat ["--style", yapfStyle]
+    alert("params = " + params)
     which = process.spawnSync('which', ['yapf']).status
     if which == 1 and not fs.existsSync(yapfPath)
       @updateStatusbarText("unable to open " + yapfPath, false)

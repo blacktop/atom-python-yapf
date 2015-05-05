@@ -5,6 +5,9 @@ module.exports =
     yapfPath:
       type: 'string'
       default: 'yapf'
+    yapfStyle:
+      type: 'string'
+      default: ''
     formatOnSave:
       type: 'boolean'
       default: false
