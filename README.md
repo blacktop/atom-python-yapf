@@ -18,4 +18,4 @@ Currently, there are two commands:
 * `python-yapf:formatCode` - for formatting python code
 * `python-yapf:checkFormat` - for checking format of python code
 
-> Heavily influenced by Benjamin Hedrich's [atom-python-isort](https://github.com/bh/atom-python-isort), which I suggest you use in tandem with this plugin.
+> Heavily influenced by Benjamin Hedrich's [atom-python-isort](https://github.com/bh/atom-python-isort).
