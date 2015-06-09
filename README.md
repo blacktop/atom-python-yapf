@@ -7,6 +7,10 @@ Atom.io plugin to format Python files using Google's [YAPF](https://github.com/g
 
 Make sure you have `YAPF` installed and the correct path to binary was set in the package config.
 
+### Settings
+
+![settings](https://raw.githubusercontent.com/blacktop/atom-python-yapf/master/settings.png)
+
 ### Keymap
 
 Currently, there are two commands:
