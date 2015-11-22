@@ -9,7 +9,7 @@ class PythonYAPF
     editor = atom.workspace.getActiveTextEditor()
     if not editor?
       return false
-    return editor.getGrammar().name == 'Python'
+    return editor.getGrammar().name == 'Python' or editor.getGrammar().name == 'MagicPython'
 
   removeStatusbarItem: =>
     @statusBarTile?.destroy()
