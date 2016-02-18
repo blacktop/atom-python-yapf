@@ -77,6 +77,7 @@ class PythonYAPF
       return
 
     updateStatusbarText = @updateStatusbarText
+    updateStatusbarText('⧗', false)
     yapfPath = atom.config.get('python-yapf.yapfPath')
     yapfStyle = atom.config.get('python-yapf.yapfStyle')
 
