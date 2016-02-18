@@ -1,4 +1,4 @@
-fs = require 'fs'
+fs = require 'fs-plus'
 $ = require 'jquery'
 process = require 'child_process'
 
@@ -9,7 +9,7 @@ class PythonYAPF
     editor = atom.workspace.getActiveTextEditor()
     if not editor?
       return false
-    return editor.getGrammar().name == 'Python' or editor.getGrammar().name == 'MagicPython'
+    return editor.getGrammar().scopeName == 'source.python'
 
   removeStatusbarItem: =>
     @statusBarTile?.destroy()
@@ -45,7 +45,7 @@ class PythonYAPF
       return
 
     updateStatusbarText = @updateStatusbarText
-    yapfPath = atom.config.get('python-yapf.yapfPath')
+    yapfPath = fs.normalize(atom.config.get('python-yapf.yapfPath'))
     yapfStyle = atom.config.get('python-yapf.yapfStyle')
 
     params = [@getFilePath(), "-d"]
@@ -77,7 +77,7 @@ class PythonYAPF
       return
 
     updateStatusbarText = @updateStatusbarText
-    yapfPath = atom.config.get('python-yapf.yapfPath')
+    yapfPath = fs.normalize(atom.config.get('python-yapf.yapfPath'))
     yapfStyle = atom.config.get('python-yapf.yapfStyle')
 
     proc_params = [@getFilePath(), "-i"]

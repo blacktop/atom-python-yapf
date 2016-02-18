@@ -9,6 +9,7 @@
     "atom": ">0.50.0"
   },
   "dependencies": {
+    "fs-plus": "^2.8.1",
     "jquery": "^2"
   }
 }
