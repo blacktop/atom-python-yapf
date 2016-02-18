@@ -77,12 +77,9 @@ class PythonYAPF
       return
 
     updateStatusbarText = @updateStatusbarText
-<<<<<<< HEAD
     updateStatusbarText('⧗', false)
-    yapfPath = atom.config.get('python-yapf.yapfPath')
-=======
+
     yapfPath = fs.normalize(atom.config.get('python-yapf.yapfPath'))
->>>>>>> master
     yapfStyle = atom.config.get('python-yapf.yapfStyle')
 
     proc_params = [@getFilePath(), "-i"]
