@@ -6,12 +6,12 @@
         'label': 'Python YAPF'
         'submenu': [
           {
-            'label': 'Format Code'
+            'label': 'Format Python Code'
             'command': 'python-yapf:formatCode'
           }
           {
-            'label': 'Check Formatting'
-            'command': 'python-yapf:checkFormat'
+            'label': 'Check Python Code'
+            'command': 'python-yapf:checkCode'
           }
         ]
       }

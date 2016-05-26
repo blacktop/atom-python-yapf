@@ -6,9 +6,17 @@
   "repository": "https://github.com/blacktop/atom-python-yapf",
   "license": "MIT",
   "engines": {
-    "atom": ">0.50.0"
+    "atom": ">=0.185.0 <2.0.0"
+  },
+  "consumedServices": {
+    "status-bar": {
+      "versions": {
+        "^1.0.0": "consumeStatusBar"
+      }
+    }
   },
   "dependencies": {
+    "atom-space-pen-views": "^2.2.0",
     "fs-plus": "^2.8.1",
     "jquery": "^2"
   }
