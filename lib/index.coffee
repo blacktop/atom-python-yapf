@@ -1,5 +1,3 @@
-PythonYAPF = require './python-yapf'
-
 module.exports =
   config:
     yapfPath:
@@ -15,28 +13,48 @@ module.exports =
       type: 'boolean'
       default: true
 
+  status: null
+  subs: null
+
   activate: ->
+    PythonYAPF = require './python-yapf'
     pi = new PythonYAPF()
 
-    atom.commands.add 'atom-workspace', 'pane:active-item-changed', ->
+    {CompositeDisposable} = require 'atom'
+    @subs = new CompositeDisposable
+
+    @subs.add atom.commands.add 'atom-workspace', 'pane:active-item-changed', ->
       pi.removeStatusbarItem()
 
-    atom.commands.add 'atom-workspace', 'python-yapf:formatCode', ->
+    @subs.add atom.commands.add 'atom-workspace', 'python-yapf:formatCode', ->
       pi.formatCode()
 
-    atom.commands.add 'atom-workspace', 'python-yapf:checkFormat', ->
-      pi.checkFormat()
+    @subs.add atom.commands.add 'atom-workspace', 'python-yapf:checkCode', ->
+      pi.checkCode()
 
-    atom.config.observe 'python-yapf.formatOnSave', (value) ->
+    @subs.add atom.config.observe 'python-yapf.formatOnSave', (value) ->
       atom.workspace.observeTextEditors (editor) ->
-        if value == true
+        if value
           editor._yapfFormat = editor.onDidSave -> pi.formatCode()
         else
           editor._yapfFormat?.dispose()
 
-    atom.config.observe 'python-yapf.checkOnSave', (value) ->
+    @subs.add atom.config.observe 'python-yapf.checkOnSave', (value) ->
       atom.workspace.observeTextEditors (editor) ->
-        if value == true
-          editor._yapfCheck = editor.onDidSave -> pi.checkFormat()
+        if value
+          editor._yapfCheck = editor.onDidSave -> pi.checkCode()
         else
           editor._yapfCheck?.dispose()
+
+    StatusDialog = require './status-dialog'
+    @status = new StatusDialog pi
+    pi.setStatusDialog(@status)
+
+  deactivate: ->
+    @subs?.dispose()
+    @subs = null
+    @status?.dispose()
+    @status = null
+
+  consumeStatusBar: (statusBar) ->
+    @status.attach statusBar

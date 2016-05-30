@@ -16,6 +16,6 @@ Make sure you have `YAPF` installed and the correct path to binary was set in th
 Currently, there are two commands:
 
 * `python-yapf:formatCode` - for formatting python code
-* `python-yapf:checkFormat` - for checking format of python code
+* `python-yapf:checkCode` - for checking format of python code
 
 > Heavily influenced by Benjamin Hedrich's [atom-python-isort](https://github.com/bh/atom-python-isort).
