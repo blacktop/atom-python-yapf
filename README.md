@@ -37,4 +37,4 @@ Find a bug? Want more features? Find something missing in the documentation? Let
 
 ### License
 
-MIT Copyright (c) 2015-2016 **blacktop**
+MIT Copyright (c) 2014-2016 **blacktop**
