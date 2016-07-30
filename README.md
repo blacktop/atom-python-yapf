@@ -1,8 +1,7 @@
-# atom-python-yapf
+atom-python-yapf
+================
 
-![License](https://img.shields.io/apm/l/python-yapf.svg)
-![Downloads](https://img.shields.io/apm/dm/python-yapf.svg)
-![Version](https://img.shields.io/apm/v/python-yapf.svg)
+![License](https://img.shields.io/apm/l/python-yapf.svg) ![Downloads](https://img.shields.io/apm/dm/python-yapf.svg) ![Version](https://img.shields.io/apm/v/python-yapf.svg)
 
 Atom.io plugin to format Python files using Google's [YAPF](https://github.com/google/yapf)
 
@@ -30,10 +29,8 @@ Or Settings/Preferences ➔ Packages ➔ Search for `python-yapf`
 
 Currently, there are two commands:
 
-* `python-yapf:formatCode` - for formatting python code
-* `python-yapf:checkCode` - for checking format of python code
-
-> Heavily influenced by Benjamin Hedrich's [atom-python-isort](https://github.com/bh/atom-python-isort).
+-	`python-yapf:formatCode` - for formatting python code
+-	`python-yapf:checkCode` - for checking format of python code
 
 ### Issues
 
@@ -41,17 +38,17 @@ Find a bug? Want more features? Find something missing in the documentation? Let
 
 ### Credits
 
+> Heavily influenced by Benjamin Hedrich's [atom-python-isort](https://github.com/bh/atom-python-isort).
+
 ### CHANGELOG
 
-See [`CHANGELOG.md`](https://github.com/blacktop/atom-python-yapf/blob/master/CHANGELOG.md).
+See [`CHANGELOG.md`](https://github.com/blacktop/atom-python-yapf/blob/master/CHANGELOG.md)
 
 ### Contributing
 
-[See all contributors on GitHub](https://github.com/donaldpipowitch/atom-beautify/graphs/contributors).
+[See all contributors on GitHub](https://github.com/blacktop/atom-python-yapf/graphs/contributors).
 
-Please update the [CHANGELOG.md](https://github.com/donaldpipowitch/atom-beautify/blob/master/CHANGELOG.md),
-add yourself as a contributor to the [package.json](https://github.com/donaldpipowitch/atom-beautify/blob/master/package.json),
-and submit a [Pull Request on GitHub](https://help.github.com/articles/using-pull-requests/).
+Please update the [CHANGELOG.md](https://github.com/blacktop/atom-python-yapf/blob/master/CHANGELOG.md), add yourself as a contributor to the [package.json](https://github.com/blacktop/atom-python-yapf/blob/master/package.json), and submit a [Pull Request on GitHub](https://help.github.com/articles/using-pull-requests/).
 
 ### License
 
