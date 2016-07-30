@@ -10,7 +10,15 @@ Atom.io plugin to format Python files using Google's [YAPF](https://github.com/g
 
 ### Install
 
-Make sure you have `YAPF` installed and the correct path to binary was set in the package config.
+Atom Package: https://atom.io/packages/python-yapf
+
+```bash
+apm install python-yapf
+```
+
+Or Settings/Preferences ➔ Packages ➔ Search for `python-yapf`
+
+> Make sure you have `YAPF` installed and the correct path to binary was set in the package config.
 
 ### Documentation
 
@@ -33,7 +41,17 @@ Find a bug? Want more features? Find something missing in the documentation? Let
 
 ### Credits
 
-### Todo
+### CHANGELOG
+
+See [`CHANGELOG.md`](https://github.com/blacktop/atom-python-yapf/blob/master/CHANGELOG.md).
+
+### Contributing
+
+[See all contributors on GitHub](https://github.com/donaldpipowitch/atom-beautify/graphs/contributors).
+
+Please update the [CHANGELOG.md](https://github.com/donaldpipowitch/atom-beautify/blob/master/CHANGELOG.md),
+add yourself as a contributor to the [package.json](https://github.com/donaldpipowitch/atom-beautify/blob/master/package.json),
+and submit a [Pull Request on GitHub](https://help.github.com/articles/using-pull-requests/).
 
 ### License
 
