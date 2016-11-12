@@ -14,7 +14,7 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
-[v0.12.0] - 2016-11-11
+[v0.13.0] - 2016-11-11
 ----------------------
 
 ### Fixed
