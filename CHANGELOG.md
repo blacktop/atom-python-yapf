@@ -25,4 +25,4 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
--	Allow relative paths by using "hasbin" to check for executable - @jmfederico
+-	Allow relative paths by using "hasbin" to check for executable - [@jmfederico](https://github.com/blacktop/atom-python-yapf/pull/17)
