@@ -14,8 +14,8 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
-[v0.11.0] - 2016-05-30
----------------------
+[v0.12.0] - 2016-11-11
+----------------------
 
 ### Fixed
 
@@ -24,3 +24,5 @@ All notable changes to this project will be documented in this file.
 ### Removed
 
 ### Changed
+
+-	Allow relative paths by using "hasbin" to check for executable - @jmfederico
