@@ -1,6 +1,7 @@
 fs = require 'fs-plus'
 $ = require 'jquery'
 process = require 'child_process'
+hasbin = require 'hasbin'
 
 module.exports =
 class PythonYAPF
@@ -35,7 +36,7 @@ class PythonYAPF
       return
 
     yapfPath = fs.normalize atom.config.get 'python-yapf.yapfPath'
-    if not fs.existsSync yapfPath
+    if not fs.existsSync(yapfPath) and not hasbin.sync(yapfPath)
       @updateStatusbarText 'unable to open ' + yapfPath, false
       return
 
