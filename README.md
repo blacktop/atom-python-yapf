@@ -1,9 +1,9 @@
 atom-python-yapf
 ================
 
-![License](https://img.shields.io/apm/l/python-yapf.svg)
-![Version](https://img.shields.io/apm/v/python-yapf.svg)
-![Downloads](https://img.shields.io/apm/dm/python-yapf.svg)
+[![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
+[![Version](https://img.shields.io/apm/v/python-yapf.svg)](https://atom.io/packages/python-yapf)
+[![Downloads](https://img.shields.io/apm/dm/python-yapf.svg)](https://atom.io/packages/python-yapf)
 
 Atom.io plugin to format Python files using Google's [YAPF](https://github.com/google/yapf)
 
