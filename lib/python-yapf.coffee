@@ -25,6 +25,9 @@ class PythonYAPF
   getFilePath: ->
     return atom.workspace.getActiveTextEditor().getPath()
 
+  getFileRoot: ->
+    return atom.project.relativizePath(@getFilePath())[0]
+
   checkCode: ->
     @runYapf 'check'
 
@@ -52,7 +55,9 @@ class PythonYAPF
     if yapfStyle.length
       params = params.concat ['--style', yapfStyle]
 
-    proc = process.spawn yapfPath, params
+    options = {cwd: @getFileRoot()}
+
+    proc = process.spawn yapfPath, params, options
     output = []
     proc.stdout.setEncoding 'utf8'
     proc.stdout.on 'data', (chunk) ->
@@ -60,7 +65,9 @@ class PythonYAPF
     proc.stdout.on 'end', (chunk) ->
       output.join()
     proc.on 'exit', (exit_code, signal) =>
-      if ((mode == 'check' and exit_code != 0) or
+      if exit_code == 127
+        @updateStatusbarText '?', false
+      else if ((mode == 'check' and exit_code != 0) or
           (mode == 'format' and exit_code == 1))
         @updateStatusbarText 'x', false
       else
