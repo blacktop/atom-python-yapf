@@ -27,6 +27,8 @@ Or Settings/Preferences ➔ Packages ➔ Search for `python-yapf`
 
 ![settings](https://raw.githubusercontent.com/blacktop/atom-python-yapf/master/settings.png)
 
+The plugin uses the `yapf` commandline tool and supports all options to define custom styling mentioned in https://github.com/google/yapf#formatting-style, i.e. a `.style.yapf` file.
+
 #### Keymap
 
 Currently, there are two commands:
